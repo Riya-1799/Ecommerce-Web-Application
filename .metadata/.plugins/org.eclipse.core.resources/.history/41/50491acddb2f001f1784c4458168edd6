@@ -1,0 +1,9 @@
+package model.Dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import model.LocalUser;
+
+public interface LocalUserDao extends CrudRepository<LocalUser, Long> {
+
+}

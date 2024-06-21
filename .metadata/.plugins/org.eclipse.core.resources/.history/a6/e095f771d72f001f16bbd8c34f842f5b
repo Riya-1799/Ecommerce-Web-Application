@@ -1,0 +1,5 @@
+package api.controller.auth;
+
+public class SecurityConfig {
+
+}

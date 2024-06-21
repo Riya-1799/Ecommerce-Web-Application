@@ -1,0 +1,22 @@
+package service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import api.model.RegistrationBody;
+import model.LocalUser;
+
+@Service
+public class UserService {
+
+	public LocalUser registeruser(RegistrationBody registrationbody) {
+		LocalUser user = new LocalUser();
+		user.setEmail(registrationbody.getEmail());
+		user.setFirstname(registrationbody.getFirstname());
+		user.setLastname(registrationbody.getLastname());
+		user.setUsername(registrationbody.getUsername());
+		user.setPassword(passwordEncoder.encode(registrationbody.getPassword()));
+		return null;
+		
+	}
+}
