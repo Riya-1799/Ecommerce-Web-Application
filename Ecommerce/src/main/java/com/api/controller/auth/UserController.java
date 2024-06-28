@@ -2,15 +2,17 @@ package com.api.controller.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.model.LoginBody;
+import com.api.model.LoginResponse;
 import com.api.model.RegistrationBody;
-import com.exception.UserAlreadyExitsException;
+import com.model.LocalUser;
 import com.service.UserService;
 
 import jakarta.validation.Valid;
@@ -32,6 +34,24 @@ public class UserController {
 			return ResponseEntity.status(HttpStatus.CONFLICT).build();
 		}
 		
+    }
+    @PostMapping("/login")
+    public ResponseEntity loginUser(@Valid @RequestBody LoginBody loginbody ) {
+    	String jwt = userservice.loginuser(loginbody);
+    	if(jwt == null) {
+    		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    	}else {
+    		LoginResponse response = new LoginResponse();
+            response.setJwt(jwt);
+            return ResponseEntity.ok(response);
+    		
+    	}
+    }
+    @GetMapping("/me")
+    public LocalUser getLoggedInUseProfile(@AuthenticationPrincipal LocalUser user){
+    	return user;
+    	
+    	
     }
 		
 }

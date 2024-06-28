@@ -1,0 +1,19 @@
+package com.service;
+
+import javax.xml.crypto.AlgorithmMethod;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+@Service
+public class JWTService {
+	
+	@Value("${jwt.algorithm.key}")
+	private String algorithmkey;
+	@Value("${jwt.issuer}")
+	private String issuer;
+	@Value("${jwt.expiryInSeconds}")
+	private int expiryInSeconds;
+	private Algorithm algorithm;
+
+}

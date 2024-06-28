@@ -3,6 +3,8 @@ package com.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,7 +25,8 @@ public class LocalUser {
 
 	@Column(nullable = false, unique = true)
 	private String username;
-
+	
+	@JsonIgnore
 	@Column(nullable = false, length = 1000)
 	private String password;
 
@@ -36,6 +39,7 @@ public class LocalUser {
 	@Column(nullable = false)
 	private String lastname;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "localuser", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<Address> address = new ArrayList<>();
 

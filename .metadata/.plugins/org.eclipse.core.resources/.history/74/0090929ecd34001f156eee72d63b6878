@@ -1,0 +1,47 @@
+package com.api.model;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
+public class RegistrationBody {
+	@NotNull
+	@NotBlank
+	@Min(3)
+	@Max(30)
+	private String username;
+	@Email
+	@NotBlank
+	private String email;
+	@NotNull
+	@NotBlank
+	@Min(5)
+	@Max(30)
+	@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$")
+	private String password;
+	@NotNull
+	@NotBlank
+	private String firstname;
+	@NotNull
+	@NotBlank
+	private String lastname;
+	public String getUsername() {
+		return username;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	
+}
