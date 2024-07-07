@@ -1,0 +1,9 @@
+package com.model.Dao;
+
+import org.springframework.data.repository.ListCrudRepository;
+
+import com.model.VerificationToken;
+
+public interface VerificationTokenDAO extends ListCrudRepository<VerificationToken, Long>{
+
+}
