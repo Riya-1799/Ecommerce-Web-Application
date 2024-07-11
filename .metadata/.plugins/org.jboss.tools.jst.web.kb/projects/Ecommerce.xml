@@ -84,6 +84,7 @@
   <path value="C:/Users/Riya arvadia/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar"/>
   <path value="C:/Users/Riya arvadia/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.1/jackson-datatype-jsr310-2.17.1.jar"/>
   <path value="C:/Users/Riya arvadia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar"/>
+  <path value="C:/Users/Riya arvadia/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar"/>
   <path value="C:/Users/Riya arvadia/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar"/>
   <path value="C:/Users/Riya arvadia/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar"/>
   <path value="C:/Users/Riya arvadia/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.1/jackson-core-2.17.1.jar"/>
@@ -127,7 +128,6 @@
   <path value="C:/Users/Riya arvadia/.m2/repository/org/springframework/spring-core/6.1.10/spring-core-6.1.10.jar"/>
  </paths>
  <validation>
-  <core validator-id="jboss.cdi.core"/>
   <el>
    <linked-el length="27" name="%0" offset="292" path="%1"/>
    <linked-el length="22" name="%2" offset="563" path="%3"/>
